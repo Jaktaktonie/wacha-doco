@@ -4,7 +4,7 @@ title: Tutorial Intro
 sidebar_position: 1
 ---
 
-![witelonka-uczelnia-granat.jpg](../jpg/witelonka-uczelnia-granat.jpg)
+![wacha.png](../static/img/wacha.png)
 
 # Porównywarka cen paliw - Dokumentacja
 
