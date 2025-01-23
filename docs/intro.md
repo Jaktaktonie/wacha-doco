@@ -4,26 +4,18 @@ title: Tutorial Intro
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+![witelonka-uczelnia-granat.jpg](../jpg/witelonka-uczelnia-granat.jpg)
 
-Let's discover **Docusaurus in less than 5 minutes**.
+# Porównywarka cen paliw - Dokumentacja
 
-## Getting Started
+"Porównywarka cen paliw" to aplikacja umożliwiająca użytkownikom przeglądanie listy oraz mapy stacji paliwowych z filtrami według m.in. marki, rodzaju paliwa i ceny. Użytkownicy mogą zgłaszać ceny paliw, a administratorzy zarządzają użytkownikami, stacjami oraz zgłoszonymi cenami. Aplikacja umożliwia nagradzanie użytkowników dodatkowymi punktami.
 
-Get started by **creating a new site**.
+| Grupa projektowa   | Role                       |
+|--------------------|----------------------------|
+| Dominik Kamiński   | Frontend                   |
+| Przemysław Typa    | Backend                    |
+| Daniel Mosakowski  | Frontend                   |
+| Andrzej Czabajski  | Leader / Project Manager / Tester |
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
+**Repozytorium projektu:**  
+[https://github.com/danielmosakowski/stacjapaliw](https://github.com/danielmosakowski/stacjapaliw)
