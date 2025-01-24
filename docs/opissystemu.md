@@ -19,6 +19,8 @@ sidebar_position: 3
     - Zgodność hasła i potwierdzenia hasła.
 - Formularz zgłoszeniowy automatycznie sprawdza błędy i wyświetla komunikaty w interfejsie.
 
+![Rejestracja.png](../static/img/Rejestracja.png)
+
 ### 1.2 Logowanie
 - Proces logowania wymaga podania:
     - Adresu email
@@ -26,6 +28,8 @@ sidebar_position: 3
 - Funkcjonalności:
     - Generowanie tokena autoryzacji po poprawnym zalogowaniu.
     - Obsługa błędów, takich jak nieprawidłowe dane logowania.
+
+![logowanie.png](../static/img/logowanie.png)
 
 ---
 
@@ -42,6 +46,8 @@ sidebar_position: 3
     - Preferencje językowe
     - Prywatność
 
+![widok panelu.png](../static/img/widok%20panelu.png)
+
 ### 2.2 Interakcje z danymi
 - Autoryzacja na podstawie tokena.
 - Dynamiczne pobieranie i aktualizacja danych za pomocą API.
@@ -55,6 +61,8 @@ sidebar_position: 3
 - Interaktywność:
     - Kliknięcie na stację wyświetla szczegółowe informacje.
     - Dynamiczne aktualizowanie zawartości na podstawie filtrów.
+
+![wyglad_mapy.png](../static/img/wyglad_mapy.png)
 
 ### 3.2 Lista stacji paliw
 - Szczegółowe informacje o stacjach:
@@ -110,6 +118,8 @@ sidebar_position: 3
     - Koordynaty GPS
     - Marka
 - Edycja istniejących danych stacji.
+
+![filtorowanie rodzaj paliwa.png](../static/img/filtorowanie%20rodzaj%20paliwa.png)
 
 ### 6.2 Zarządzanie markami stacji
 - Dodawanie, edytowanie i usuwanie marek stacji.

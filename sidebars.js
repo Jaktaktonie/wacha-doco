@@ -3,6 +3,7 @@ const sidebars = {
     { type: 'doc', id: 'intro', label: 'Wprowadzenie' },
     { type: 'doc', id: 'funkcje', label: 'Funkcjonalności' },
     { type: 'doc', id: 'opis-funkcjonalny-systemu', label: 'Opis Funkcjonalny Systemu' },
+    { type: 'doc', id: 'testy', label: 'Testy' },
     { type: 'doc', id: 'manual', label: 'Instalacja' },
 
 
