@@ -1,85 +1,129 @@
 ---
 id: manual
-title: Instalacja
+title: Instrukcja instalacji i uruchomienia
 sidebar_position: 5
 ---
 
-# Instrukcja uruchomienia
+# Instrukcja lokalnego i zdalnego uruchomienia systemu
+
 ---
 
-## Środowisko deweloperskie
+## 2.1 Wymagania
 
-1. **Klonowanie repozytorium**  
-Pierwszym krokiem jest pobranie kodu źródłowego aplikacji na lokalną maszynę. W tym celu korzystamy z Gita, który jest narzędziem do zarządzania wersjami.
-Użyj poniższych komend w terminalu:  
+Aby uruchomić projekt lokalnie, wymagane są następujące programy i wersje:
+
+- **XAMPP**: 8.2.12
+- **Composer**: 2.8.3
+
+---
+
+## 2.2 Lokalna instalacja i uruchomienie
+
+Wykonaj poniższe kroki, aby zainstalować i uruchomić projekt lokalnie:
+
+### 2.2.1 Klonowanie repozytorium
 
 ```bash
-git clone https://github.com/username/repository.git
-cd repository
-   ```
-:::info To polecenie pobierze całe repozytorium z kodem źródłowym na Twój komputer i przejdzie do jego katalogu.
-:::
+git clone https://github.com/danielmosakowski/stacjapaliw.git
+cd stacjapaliw
+```
 
-2. **Instalacja zależności**:  
-   Aplikacja korzysta z dwóch typów zależności: backendowych i frontendowych. Backendowe zarządzane są za pomocą Composer, natomiast frontendowe za pomocą npm.
-   Uruchom kolejno:
+### 2.2.2 Instalacja zależności PHP
+
+W katalogu projektu wykonaj polecenie:
 
 ```bash
 composer install
-npm install
-   ```
-Composer pobierze wszystkie pakiety PHP potrzebne do działania aplikacji, takie jak Laravel, a npm zainstaluje zależności JavaScript używane do obsługi interfejsu użytkownika.  
+```
 
-3. **Konfiguracja środowiska**  
-Konfiguracja aplikacji opiera się na pliku .env, który przechowuje dane takie jak połączenie z bazą danych, klucze API czy inne wrażliwe informacje.
+### 2.32.3 Utworzenie pliku `.env`
 
-- Skopiuj domyślny plik konfiguracyjny:
+Skopiuj przykładowy plik `.env`:
+
 ```bash
 cp .env.example .env
 ```
-- Edytuj plik .env, wprowadzając swoje dane, np.
+
+Dostosuj ustawienia w pliku `.env`:
+:::caution
+```plaintext
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=stacjapaliw
+DB_USERNAME=root
+DB_PASSWORD=
+```
+:::
+### 2.2.4 Wygenerowanie klucza aplikacji
+
+Wykonaj polecenie:
 
 ```bash
-DB_CONNECTION=pgsql
-DB_HOST=127.0.0.1
-DB_PORT=5432
-DB_DATABASE=fuel_price_db
-DB_USERNAME=root
-DB_PASSWORD=notregularpassword
+php artisan key:generate
 ```
-4. **Uruchomienie migracji bazy danych**  
-Laravel oferuje potężny system migracji, który umożliwia łatwe tworzenie i modyfikowanie schematów bazy danych. Aby zainicjować strukturę bazy danych, użyj:
+
+### 2.2.5 Migracje bazy danych
+
+Wykonaj polecenie:
 
 ```bash
 php artisan migrate
 ```
-To polecenie utworzy wszystkie wymagane tabele w bazie danych.
 
-5. **Start lokalnego serwera**  
+### 2.2.6 Zapełnienie bazy danych
+
+Wykonaj polecenie:
+
+```bash
+php artisan db:seed
+```
+
+### 2.2.7 Uruchomienie serwera aplikacji
+
+Uruchom aplikację poleceniem:
 
 ```bash
 php artisan serve
 ```
-Po uruchomieniu serwera aplikacja będzie dostępna pod adresem: http://localhost:8000.  
+
+🌐 Aplikacja będzie dostępna pod adresem:
+
+[http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 ---
-## Szczegóły implementacji
 
-### Rejestracja i logowanie
+## 2.3 Zdalna instalacja i uruchomienie
 
-System rejestracji i logowania opiera się na funkcjach wbudowanych w Laravel, które zapewniają bezpieczeństwo i łatwość implementacji.  
+W przypadku wdrożenia aplikacji na serwerze zdalnym wykonaj następujące kroki:
 
-- **Formularz rejestracyjny**
-Poniżej znajduje się kod HTML formularza rejestracyjnego, który pozwala użytkownikom utworzyć konto:
+### 2.3.1 Klonowanie repozytorium
+
+Zaloguj się na serwer i wykonaj:
 
 ```bash
-<form action="/register" method="post">
-    <input type="text" name="email" placeholder="Email">
-    <input type="password" name="password" placeholder="Hasło">
-    <button type="submit">Zarejestruj się</button>
-</form>
+git clone https://github.com/danielmosakowski/stacjapaliw.git
+cd stacjapaliw
+composer install
 ```
-- **Logowanie użytkownika**  
-  Proces logowania opiera się na weryfikacji danych w bazie użytkowników oraz zarządzaniu sesjami. Laravel domyślnie oferuje funkcje do obsługi błędów, takich jak nieprawidłowe dane logowania.
-- **Resetowanie hasła**
-  Mechanizm resetowania hasła pozwala użytkownikom odzyskać dostęp do konta poprzez link wysyłany na adres e-mail.
+
+### 2.3.2 Konfiguracja pliku `.env`
+
+Dostosuj ustawienia pliku `.env` w katalogu projektu, podobnie jak w instrukcji lokalnej.
+
+### 2.3.3 Migracje i zapełnienie bazy danych
+
+Wykonaj migracje i wypełnij bazę danych poleceniami:
+
+```bash
+php artisan migrate
+php artisan db:seed
+```
+
+### 2.3.4 Konfiguracja serwera Apache
+
+Ustaw serwer Apache tak, aby wskazywał na katalog `public` w projekcie.
+
+### 2.3.5 Uruchomienie aplikacji
+
+Aplikacja powinna być dostępna pod skonfigurowanym adresem serwera.
